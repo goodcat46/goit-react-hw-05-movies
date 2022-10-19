@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { Outlet } from 'react-router-dom'
 import css from './Layout.module.css'
 import AppBar from 'components/AppBar/AppBar'

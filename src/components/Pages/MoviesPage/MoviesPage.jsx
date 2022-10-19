@@ -1,12 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Outlet, NavLink } from 'react-router-dom';
+import Button from 'components/Button/Button';
 
 import css from './MoviesPage.module.css';
 
 const MoviesPage = props => {
   return (
     <div className={css.moviesPage}>
+      <Button btnName='< Back'/>
       <div className={css.movieBox}>
         <div className={css.imgBox}>
           <img
@@ -17,8 +19,13 @@ const MoviesPage = props => {
         <div className={css.infoBox}>
           <p className={css.title}>Title</p>
           <p className={css.text}>Text</p>
+          <p className={css.title}>Title</p>
           <p className={css.text}>Text</p>
-          <p className={css.decription}>Description</p>
+          <p className={css.title}>Title</p>
+          <p className={css.text}>Text</p>
+          <p className={css.title}>Description</p>
+          <p className={css.text}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quod voluptatibus similique facere illo consequatur minima, maxime blanditiis a voluptatum et beatae facilis consequuntur reiciendis minus officiis sit corporis ipsam.</p>
+
         </div>
       </div>
       <nav className={css.navigate}>

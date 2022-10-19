@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import MovieSerch from 'components/MovieSerch/MovieSerch';
 import TrendList from 'components/TrendList/TrendList';
 

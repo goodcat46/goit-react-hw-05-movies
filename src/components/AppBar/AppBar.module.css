@@ -1,6 +1,8 @@
 .appBar {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   gap: 8px;
+
+  padding: 8px;
 }

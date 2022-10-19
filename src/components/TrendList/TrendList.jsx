@@ -1,12 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 import css from './TrendList.module.css'
 
 const TrendList = props => {
   return (
     <div>
-      <ul>
+      <ul className={css.TrendList}>
         <li>Movie 1</li>
         <li>Movie 2</li>
       </ul>
