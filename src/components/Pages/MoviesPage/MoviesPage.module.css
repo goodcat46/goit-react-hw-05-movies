@@ -1,0 +1,31 @@
+.moviesPage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+}
+
+.navigate {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.movieBox {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  width: 100%;
+}
+.imgBox {
+  max-height: 300px;
+  max-width: 200px;
+}
+.infoBox{
+  padding: 10px;
+}
+.title {
+}
+.text {
+}
+.decription {
+}
