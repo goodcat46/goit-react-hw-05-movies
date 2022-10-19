@@ -4,12 +4,11 @@ import css from './Reviews.module.css';
 
 const Reviews = props => {
   return (
-    <div >
       <ul className={css.reviews}>
         <li>Review 1</li>
         <li>Review 2</li>
       </ul>
-    </div>
+
   );
 };
 

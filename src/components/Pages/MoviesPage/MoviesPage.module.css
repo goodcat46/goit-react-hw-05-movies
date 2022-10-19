@@ -8,38 +8,4 @@
   padding: 8px;
 }
 
-.navigate {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 
-  padding: 8px;
-
-  box-shadow: 0 0 5px rgba(122,122,122, 0.5);
-}
-.movieBox {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-
-  width: 100%;
-}
-.imgBox {
-  max-height: 300px;
-  max-width: 200px;
-}
-.infoBox{
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-
-  padding: 10px;
-
-  font-size: 16px;
-}
-.title {
-  font-size: 18px;
-  font-weight: 700;
-}
-.text {
-  font-weight: 400;
-}
