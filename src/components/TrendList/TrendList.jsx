@@ -12,7 +12,7 @@ const TrendList = ({ trendList = [] }) => {
       {trendList.map(({ id, name, title }) => {
         return (
           <li key={id} className={css.item}>
-            <Link to={`/movies/${id}`} state={{ from: location }}>
+            <Link to={`/movies/${id}`} state={{ location }}>
               {name || title}
             </Link>
           </li>

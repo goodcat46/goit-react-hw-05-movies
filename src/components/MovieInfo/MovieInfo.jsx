@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import {
   Link,
@@ -16,8 +16,8 @@ const MovieInfo = () => {
   const { movieId } = useParams();
 
   const location = useLocation();
-
-  const backLinkPath = location.state?.from ?? '/';
+  const refLocation = useRef(location);
+  const backLinkPath = refLocation.current.state?.location ?? '/';
 
   const getFetchedMovieInfo = async () => {
     try {

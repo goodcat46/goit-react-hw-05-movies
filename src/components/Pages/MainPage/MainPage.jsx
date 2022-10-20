@@ -11,7 +11,7 @@ const MainPage = () => {
     try {
       const response = await getFetchTrends();
       setLoadTrends(response);
-      console.log(response);
+
     } catch (error) {
       console.log(error);
     }

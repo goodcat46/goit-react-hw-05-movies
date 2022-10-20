@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import MoviesSearchList from './MoviesSearchList/MoviesSearchList';
 import getFetchSearchMovie from 'api/fetchSearchMovie';
-import css from './MovieSerch.module.css';
+
+import css from './MovieSearch.module.css';
 
 const MovieSerch = () => {
-  const [fondMovies, setFondMovies] = useState();
-  const [showList, setShowList] = useState(false);
+  const [foundMovies, setfoundMovies] = useState();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const searchInput = searchParams.get('query') ?? '';
@@ -22,15 +22,12 @@ const MovieSerch = () => {
   }
   function handleSubmitSerch(evt) {
     evt.preventDefault();
-    setShowList(true);
     setSearchQuery(searchInput);
   }
   const getFetchFoundMovies = async searchQuery => {
     try {
       const response = await getFetchSearchMovie(searchQuery);
-      console.log('==========', response);
-
-      setFondMovies(response);
+      setfoundMovies(response);
     } catch (error) {
       console.log(error);
     }
@@ -43,6 +40,13 @@ const MovieSerch = () => {
     getFetchFoundMovies(searchQuery);
   }, [searchQuery]);
 
+  useEffect(() => {
+    const locationSearch = window.location.search.split('=');
+
+    if (locationSearch[0] === '?query' && locationSearch[1].length) {
+      setSearchQuery(locationSearch[1]);
+    }
+  }, []);
 
   return (
     <>
@@ -65,13 +69,14 @@ const MovieSerch = () => {
           }}
         />
         <button className={css.button} type="submit">
-          Serch
+          Search
         </button>
       </form>
-
-      {!showList && <p>Let's go find some movies for you.</p>}
-
-      {showList && <MoviesSearchList moviesList={fondMovies} location={location} />}
+      {!!foundMovies?.length ? (
+        <MoviesSearchList moviesList={foundMovies} location={location} />
+      ) : (
+        <p>Let's go find some movies for you.</p>
+      )}
     </>
   );
 };

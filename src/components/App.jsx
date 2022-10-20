@@ -6,7 +6,7 @@ import MoviesPage from './Pages/MoviesPage/MoviesPage';
 // import Cast from './Cast/Cast';
 // import Reviews from './Reviews/Reviews';
 // import NotFoundPage from './Pages/NotFound/NotFoundPage';
-import MovieSerch from './MovieSerch/MovieSerch';
+import MovieSerch from './MovieSerch/MovieSearch';
 import css from './App.module.css';
 // const MovieSerch = lazy(() => import('./MovieSerch/MovieSerch'));
 const MovieInfo = lazy(() => import('./MovieInfo/MovieInfo'));
