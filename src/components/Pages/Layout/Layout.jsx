@@ -1,19 +1,17 @@
-import React from 'react'
+import React from 'react';
 // import PropTypes from 'prop-types'
-import { Outlet } from 'react-router-dom'
-import css from './Layout.module.css'
-import AppBar from 'components/AppBar/AppBar'
+import css from './Layout.module.css';
+import AppBar from 'components/AppBar/AppBar';
 
-const Layout = props => {
+const Layout = ({ children }) => {
   return (
     <div className={css.layout}>
       <AppBar></AppBar>
-
-      <Outlet/>
+      {children}
     </div>
-  )
-}
+  );
+};
 
-Layout.propTypes = {}
+Layout.propTypes = {};
 
-export default Layout
+export default Layout;

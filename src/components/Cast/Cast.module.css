@@ -1,9 +1,9 @@
 .cast {
-  display: grid ;
-  grid-template-columns: repeat(4,1fr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 
+  margin: auto;
   padding: 8px;
-
-  width: 100%;
+  width: 600px;
 }

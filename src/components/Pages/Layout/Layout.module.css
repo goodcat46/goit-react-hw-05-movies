@@ -1,6 +1,5 @@
 .layout{
-  display: grid;
-  grid-template-columns: 120px 800px;
+  display: flex;
   gap: 8px;
 
   width: 100%;

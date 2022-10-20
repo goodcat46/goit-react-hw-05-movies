@@ -1,28 +1,66 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
 import Layout from './Pages/Layout/Layout';
 import MainPage from './Pages/MainPage/MainPage';
 import MoviesPage from './Pages/MoviesPage/MoviesPage';
-import Cast from './Cast/Cast';
-import Reviews from './Reviews/Reviews';
-import NotFoundPage from './Pages/NotFound/NotFoundPage';
-
+// import Cast from './Cast/Cast';
+// import Reviews from './Reviews/Reviews';
+// import NotFoundPage from './Pages/NotFound/NotFoundPage';
+import MovieSerch from './MovieSerch/MovieSerch';
 import css from './App.module.css';
-// import Rewiews
+// const MovieSerch = lazy(() => import('./MovieSerch/MovieSerch'));
+const MovieInfo = lazy(() => import('./MovieInfo/MovieInfo'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+const NotFoundPage = lazy(() => import('./Pages/NotFound/NotFoundPage'));
 
 export const App = () => {
   return (
     <div className={css.app}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="tranding" element={<MainPage />}></Route>
+      <Layout>
+        <Routes>
+          <Route index element={<MainPage />}></Route>
+
           <Route path="movies" element={<MoviesPage />}>
-            <Route path="cast" element={<Cast />}></Route>
-            <Route path="reviews" element={<Reviews />}></Route>
+            <Route index element={<MovieSerch />}></Route>
+
+            <Route
+              path=":movieId"
+              element={
+                <Suspense fallback={<p>'Loading... Please wait ='</p>}>
+                  <MovieInfo />
+                </Suspense>
+              }
+            >
+              <Route
+                path="cast"
+                element={
+                  <Suspense fallback={<p>'Loading... Please wait ='</p>}>
+                    <Cast />
+                  </Suspense>
+                }
+              ></Route>
+
+              <Route
+                path="reviews"
+                element={
+                  <Suspense fallback={<p>'Loading... Please wait ='</p>}>
+                    <Reviews />
+                  </Suspense>
+                }
+              ></Route>
+            </Route>
           </Route>
-          <Route path="*" element={<NotFoundPage />}/>
-        </Route >
-      </Routes>
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<p>'Loading... Please wait ='</p>}>
+                <NotFoundPage />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </Layout>
     </div>
   );
 };

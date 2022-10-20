@@ -1,22 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { Outlet, NavLink } from 'react-router-dom';
-import Button from 'components/Button/Button';
-import MovieSerch from 'components/MovieSerch/MovieSerch';
-import MovieInfo from '../../MovieInfo/MovieInfo';
+import { Outlet } from 'react-router-dom';
 
 import css from './MoviesPage.module.css';
 
-const MoviesPage = props => {
+const MoviesPage = () => {
   return (
     <div className={css.moviesPage}>
-      <Button btnName="< Go Back" />
-      <MovieSerch />
-      <MovieInfo />
+      <Outlet />
     </div>
   );
 };
-
-MoviesPage.propTypes = {};
 
 export default MoviesPage;

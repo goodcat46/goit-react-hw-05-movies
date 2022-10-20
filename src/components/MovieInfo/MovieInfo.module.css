@@ -9,8 +9,9 @@
   gap: 8px;
 }
 .imgBox {
+  min-width: 200px;
   max-height: 300px;
-  max-width: 200px;
+  max-width: 250px;
 }
 .infoBox {
   display: flex;

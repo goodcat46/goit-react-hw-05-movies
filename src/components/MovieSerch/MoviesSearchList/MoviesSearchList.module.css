@@ -2,9 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+
 }
 .item {
   padding: 8px;
+
 }
 .item:hover {
   box-shadow: 0 0 8px rgba(122, 122, 122, 0.5);
