@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import css from './MoviesSearchList.module.css';
 
 const MoviesSearchList = ({ moviesList }) => {
-  const location = useLocation()
+  const location = useLocation();
 
   if (!moviesList || moviesList.length === 0) {
     return <p>Not founded movies on your request</p>;
@@ -30,7 +30,12 @@ const MoviesSearchList = ({ moviesList }) => {
 };
 
 MoviesSearchList.propTypes = {
-  moviesList: PropTypes.array,
+  moviesList: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    title: PropTypes.string,
+  }),
 };
+
 
 export default MoviesSearchList;
