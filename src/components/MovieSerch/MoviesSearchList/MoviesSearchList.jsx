@@ -28,7 +28,7 @@ const MoviesSearchList = ({ moviesList }) => {
     </>
   );
 };
-// state={{ from: location.state?.from }}
+
 MoviesSearchList.propTypes = {
   moviesList: PropTypes.array,
 };

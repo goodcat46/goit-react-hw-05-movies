@@ -5,7 +5,6 @@ import css from './TrendList.module.css';
 
 const TrendList = ({ trendList = [] }) => {
   const location = useLocation();
-// console.log(trendList);
   return (
     <ul className={css.list}>
       {trendList.map(({ id, name, title }) => {

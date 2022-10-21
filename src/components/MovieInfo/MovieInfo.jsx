@@ -23,7 +23,6 @@ const MovieInfo = () => {
     try {
       const response = await getFetchById(movieId);
       setLoadMovieInfo(response);
-      console.log('movie', response);
     } catch (error) {
       console.log(error);
     }

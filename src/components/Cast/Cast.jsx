@@ -24,7 +24,6 @@ const Cast = () => {
   }, []);
 
   if (castList.length === 0) {
-    console.log(castList);
     return <p>No casts for this movie</p>;
   }
   return (

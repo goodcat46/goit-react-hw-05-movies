@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import getFetchRewiewsById from 'api/fetchReviews';
-// import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 import css from './Reviews.module.css';
 
-const Reviews = props => {
+const Reviews = () => {
   const [rewiewsList, setRewiewsList] = useState([]);
   const { movieId } = useParams();
 
@@ -13,8 +12,6 @@ const Reviews = props => {
     try {
       const response = await getFetchRewiewsById(movieId);
       setRewiewsList(response);
-
-      console.log('====', response);
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +42,5 @@ const Reviews = props => {
     </ul>
   );
 };
-
-Reviews.propTypes = {};
 
 export default Reviews;
